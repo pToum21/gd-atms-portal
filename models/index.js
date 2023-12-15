@@ -26,4 +26,4 @@ Comments.belongsTo(Ticket, {
     foreignKey: 'ticket_id'
 })
 
-module.exports = { User, Comment, Ticket }
+module.exports = { User, Comments, Ticket }
