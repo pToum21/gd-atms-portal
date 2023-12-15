@@ -1,0 +1,60 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "node": true,
+    "es6": true,
+    "es2021": true
+  },
+  "rules": {
+    //disallows undefined variable
+    "no-undef-init": "error",
+    //no duplicate cases in a switch statement
+    "no-duplicate-case": "error",
+    // no empty block statements
+    "no-empty": "error",
+    // no extra semicolons
+    "no-extra-semi": "error",
+    // no functions as variable assignments
+    "no-func-assign": "error",
+    // no irregular white spaces
+    "no-irregular-whitespace": "error",
+    // notes when code is unreachable (eg: after a return)
+    "no-unreachable": "error",
+    // need curly braces {} for control flow statements
+    "curly": "error",
+    // use dot instead of bracket notation
+    "dot-notation": "error",
+    //only use ===(three)
+    "eqeqeq": "error",
+    //namesake
+    "no-empty-function": "error",
+    //nameaake
+    "no-multi-spaces": "error",
+    //dont mix up tabs and spaces for indentation, be consistent
+    "no-mixed-spaces-and-tabs": "error",
+    // namesake
+    "no-trailing-spaces": "error",
+    // alerts to when a switch statement is missing a default case
+    "default-case": "error",
+    // disallows fallthrough cases in switch statements
+    "no-fallthrough": "error",
+    //namesake
+    "no-unused-vars": "error",
+    //cannot use vars before declared
+    "no-use-before-define": "error",
+    //prevents duplicate names for vars or funcs in same scope
+    "no-redeclare": "error",
+    //enforces use of 1tbs style: opening brace is same line as statement, closing is on new line
+    "brace-style": "error",
+  //enforces indentation of 2 spaces
+    "indent": ["error", 2],
+    // single quotes for string literals
+    "quotes": ["error", "single"],
+    //enforces semicolons at end of statements
+    "semi": ["error", "always"],
+    //dont need to use radix when using parseInt()
+    "radix": "off"
+  }
+}
