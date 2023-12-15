@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS atm_db;
+
+CREATE DATABASE atm_db;
