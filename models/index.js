@@ -1,6 +1,6 @@
 const User = require('./User')
 const Ticket = require('./Ticket')
-const Comments = require('./Comment')
+const Comment = require('./Comment')
 
 // figure out how to implement role to have an admin access
 // const Role = require('./Role')
@@ -12,18 +12,18 @@ Ticket.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-User.hasMany(Comments, {
+User.hasMany(Comment, {
     foreignKey: 'user_id'
 });
-Comments.belongsTo(User, {
+Comment.belongsTo(User, {
     foreignKey: 'user_id'
 })
 
-Ticket.hasMany(Comments, {
+Ticket.hasMany(Comment, {
     foreignKey: 'ticket_id'
 })
-Comments.belongsTo(Ticket, {
+Comment.belongsTo(Ticket, {
     foreignKey: 'ticket_id'
 })
 
-module.exports = { User, Comments, Ticket }
+module.exports = { User, Comment, Ticket }
