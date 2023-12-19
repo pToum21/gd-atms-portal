@@ -3,6 +3,7 @@ require('dotenv').config();
 // Create connection object
 let sequelize;
 
+// works for both computers now
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
