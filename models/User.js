@@ -29,6 +29,11 @@ User.init(
             validate: {
                 len: [8]
             }
+        },
+        role: {
+            type: DataTypes.STRING, // You can adjust the data type based on your specific requirements
+            allowNull: false,
+            defaultValue: 'customer' // Set a default role for new users
         }
     },
     {
