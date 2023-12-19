@@ -30,9 +30,11 @@ Ticket.init(
                 model: 'user',
                 key: 'id'
             }
+        },
+        image_url: {
+            type: DataTypes.STRING,
+            allowNull: true
         }
-
-
     },
     {
         sequelize,
