@@ -8,8 +8,11 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
 try {
     const ticketData = await Ticket.findAll({
-        
+        include: User,
+        order: [['date_created', 'DESC']]
     })
+
+    
 } catch (error) {
     
 }
