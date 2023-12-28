@@ -13,6 +13,11 @@ router.get('/', async (req, res) => {
         })
 
         const ticket = ticketData.map((ticketPost) => ticketPost.get({ plain: true }))
+
+        res.render('home', {
+            ticket,
+            llogged_in: req.session.logged_in
+        })
     } catch (error) {
         console.log(error)
         res.status(400).json(err)
