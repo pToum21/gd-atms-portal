@@ -56,7 +56,28 @@ router.get('/login', (req, res) => {
 // get route to show ticket by id
 // include comments model
 router.get('/ticket/:id', async (req, res) => {
+    try {
+        const userTicketData = await Ticket.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Comment,
+                    include: User,
+                },
+                {
+                    model: User
+                }
+            ]
+        })
 
+        const userTicket = userTicketData.get({ plain: true })
+
+        res.render('', {
+            ...userTicket,
+            logged_in: req.session.log
+        })
+    } catch (error) {
+        res.status(400).json(error)
+    }
 })
 
 
