@@ -53,8 +53,11 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-// get route to show post by id
+// get route to show ticket by id
 // include comments model
+router.get('/ticket/:id', async (req, res) => {
+
+})
 
 
 
