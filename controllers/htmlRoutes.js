@@ -71,11 +71,12 @@ router.get('/ticket/:id', async (req, res) => {
 
         const userTicket = userTicketData.get({ plain: true })
 
-        res.render('', {
+        res.render('ticket', {
             ...userTicket,
             logged_in: req.session.log
         })
     } catch (error) {
+        console.log(error)
         res.status(400).json(error)
     }
 })
