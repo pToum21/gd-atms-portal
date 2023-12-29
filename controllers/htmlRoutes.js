@@ -82,7 +82,14 @@ router.get('/ticket/:id', async (req, res) => {
 })
 
 // create a route that shows all of the logged in users previous tickets
-
+router.get('/profile', withAuth, async (req, res) => {
+try {
+    
+} catch (error) {
+    console.log(error)
+    res.status(500).json(err);
+}
+})
 
 
 module.exports = router;
