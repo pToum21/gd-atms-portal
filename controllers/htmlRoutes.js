@@ -53,5 +53,9 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+// get route to show post by id
+// include comments model
+
+
 
 module.exports = router;
