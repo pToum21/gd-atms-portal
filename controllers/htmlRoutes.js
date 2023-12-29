@@ -5,7 +5,7 @@ const router = require('express').Router();
 const withAuth = require('../utils/auth');
 
 // homepage route
-rrouter.get('/', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         // Fetch all tickets with user details
         const ticketData = await Ticket.findAll({
