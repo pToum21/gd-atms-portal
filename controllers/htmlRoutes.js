@@ -83,12 +83,21 @@ router.get('/ticket/:id', async (req, res) => {
 
 // create a route that shows all of the logged in users previous tickets
 router.get('/profile', withAuth, async (req, res) => {
-try {
-    
-} catch (error) {
-    console.log(error)
-    res.status(500).json(err);
-}
+    try {
+        const userData = await User.findByPk(req.session.user_id, {
+
+        });
+
+        const user = userData.get({ plain: true });
+
+        res.render('profile', {
+            ...user,
+            logged_in: true
+        })
+    } catch (error) {
+        console.log(error)
+        res.status(500).json(err);
+    }
 })
 
 
