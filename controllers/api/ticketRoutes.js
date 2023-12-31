@@ -43,7 +43,15 @@ router.post('/', async (req, res) => {
 
 // create an update route for tickets
 router.put('/:id', withAuth, async (req, res) => {
-
+    try {
+        const ticketData = await Ticket.update({
+            ...req.body,
+            
+        })
+    } catch (error) {
+        console.log(error)
+        res.status(400).json(error)
+    }
 })
 
 module.exports = router;
