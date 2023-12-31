@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Ticket } = require('../../models');
+const withAuth = require('../../utils/auth');
 const cloudinary = require('cloudinary').v2;
 
 // Configure Cloudinary with your credentials
@@ -41,5 +42,8 @@ router.post('/', async (req, res) => {
 });
 
 // create an update route for tickets
+router.put('/:id', withAuth, async (req, res) => {
+
+})
 
 module.exports = router;
