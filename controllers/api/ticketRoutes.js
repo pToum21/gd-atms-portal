@@ -55,6 +55,12 @@ router.put('/:id', withAuth, async (req, res) => {
             }
         });
 
+        if(!ticketData){
+            res.status(404).json({ message: 'Cannot find the ticket you are looking for with this id' })
+            return;
+        }
+
+        res.status(200).json(ticketData)
         
     } catch (error) {
         console.log(error)
