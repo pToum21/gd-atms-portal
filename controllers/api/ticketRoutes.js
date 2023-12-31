@@ -46,8 +46,16 @@ router.put('/:id', withAuth, async (req, res) => {
     try {
         const ticketData = await Ticket.update({
             ...req.body,
-            
-        })
+            date_updated: new Date(),
+        },
+        {
+            where: {
+                id: req.params.id,
+                user_id: req.session.user_id
+            }
+        });
+
+        
     } catch (error) {
         console.log(error)
         res.status(400).json(error)
