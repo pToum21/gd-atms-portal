@@ -66,6 +66,8 @@ router.put('/:id', withAuth, async (req, res) => {
         console.log(error)
         res.status(400).json(error)
     }
-})
+});
+
+// write a delete route that allows the user to delete their blog post
 
 module.exports = router;
