@@ -6,7 +6,7 @@ const withAuth = require('../utils/auth');
 
 // create a route that shows all of the logged in users previous tickets
 
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
@@ -23,4 +23,4 @@ router.get('/profile', withAuth, async (req, res) => {
         console.log(error)
         res.status(500).json(err);
     }
-})
+});
