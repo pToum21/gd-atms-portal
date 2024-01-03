@@ -4,6 +4,7 @@ const sequelize = require('../config/connection')
 
 class Ticket extends Model { }
 
+// ticket column
 Ticket.init(
     {
         title: {
